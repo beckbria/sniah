@@ -1,16 +1,16 @@
 $fn = 50;
 
+include <constants.scad>;
+
 midHeight = 6;
-pillarRadius = 2.5;
 clearanceHeight = 0.2;
-clearanceRadius = 0.1;
 // (Max Radius = 1.75" / 2 = 22.225mm)
 rimRadius = 22.225;
 
 // Connecting Hole for lower part peg
 module connecting_hole(height = 10 + clearanceHeight) {
     translate([0, 0, -0.1])
-        cylinder(r = pillarRadius + clearanceHeight, h = height);
+        cylinder(r = PILLAR_RADIUS + clearanceHeight, h = height);
 }
 
 module tower_upper() {
@@ -52,9 +52,7 @@ module tower_lower() {
     union() {
         difference() {
             // Lower Flare
-            //cylinder(r1 = 7.5, r2 = rimRadius, h = midHeight);
             cylinder(r1 = rimRadius, r2 = 7.5, h = midHeight);
-
             connecting_hole(midHeight / 3);
         }
         
@@ -64,8 +62,8 @@ module tower_lower() {
 
 module connecting_peg() {
     cylinder(
-        r1 = pillarRadius + clearanceHeight,
-        r2 = pillarRadius + clearanceHeight,
+        r1 = PILLAR_RADIUS + clearanceHeight,
+        r2 = PILLAR_RADIUS + clearanceHeight,
     h = 5);
 }
 
@@ -93,7 +91,7 @@ module tower_legs() {
             
        // Central Pillar
         translate([0,0, midHeight / 3])
-            cylinder(r=pillarRadius, h=38);
+            cylinder(r=PILLAR_RADIUS, h=38);
     }
 }
 

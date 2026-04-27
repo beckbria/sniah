@@ -1,29 +1,29 @@
 $fn = 50;
 
-pillarRadius = 2.5;
-clearanceRadius = 0.05;
-studRadius = 1.75;
+include <constants.scad>;
 
-module stud() {
+module studHole() {
+    r = STUD_RADIUS+CLEARANCE_RADIUS;
+    // Rotate the stud to be oriented along the X axis. Add length padding to ensure full depth insertion
     rotate([90,0,0])
-        cylinder(h=12, r1=studRadius+clearanceRadius, r2=studRadius+clearanceRadius);
+        cylinder(h=STUD_LENGTH * 1.5, r1=r, r2=r);
 }
 
 module holes() {
     union() {
         // Pillar at top for space needle to sit in
-        connectorRadius = pillarRadius+clearanceRadius;
+        connectorRadius = PILLAR_RADIUS+CLEARANCE_RADIUS;
         translate([0,0,45])
             cylinder(h=15, r1=connectorRadius, r2=connectorRadius);
         
         // puzzle piece one/top (socket/knob/socket/knob)
-        translate([11,-19,32]) stud();
+        translate([11,-19,32]) studHole();
         
         // puzzle piece two/left (edge/knob/socket/knob)
-        translate([0,-22,18.5]) stud();
+        translate([0,-22,18.5]) studHole();
         
         // puzzle piece three/right (edge/edge/socket/knob)
-        translate([18.5,-19.5,13.5]) stud();
+        translate([18.5,-19.5,13.5]) studHole();
         
     }
 }
