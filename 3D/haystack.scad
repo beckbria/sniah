@@ -1,3 +1,4 @@
+// Minimum number of facets on round objects
 $fn = 50;
 
 // KNOWN ISSUE:
@@ -19,17 +20,17 @@ module holes() {
     union() {
         // Pillar at top for space needle to sit in
         connectorRadius = PILLAR_RADIUS+CLEARANCE_RADIUS;
-        translate([0,0,45])
+        translate([PILLAR_X,0,45])
             cylinder(h=15, r1=connectorRadius, r2=connectorRadius);
         
         // puzzle piece one/top (socket/knob/socket/knob)
-        translate([11,-19,32]) studHole();
+        translate([TOP_STUD_X,TOP_STUD_Y,TOP_STUD_Z]) studHole();
         
         // puzzle piece two/left (edge/knob/socket/knob)
-        translate([0,-22,18.5]) studHole();
+        translate([LEFT_STUD_X,LEFT_STUD_Y,LEFT_STUD_Z]) studHole();
         
         // puzzle piece three/right (edge/edge/socket/knob)
-        translate([18.5,-19.5,13.5]) studHole();
+        translate([RIGHT_STUD_X,RIGHT_STUD_Y,RIGHT_STUD_Z]) studHole();
         
     }
 }
@@ -41,7 +42,7 @@ module haystack() {
         scaleFactor = 2.1;
     
         scale([scaleFactor,scaleFactor,scaleFactor])
-            import("./haystack_mephistoschan.stl", convexity=10);
+            import("./haystack_mephistoschan.stl", convexity=6);
     }
 }
 

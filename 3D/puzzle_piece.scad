@@ -1,3 +1,5 @@
+// Library for creating 3D models of puzzle pieces.  Side type and size are parametric.
+
 // Types of Side
 EDGE = 1;
 KNOB = 2;

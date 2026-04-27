@@ -2,9 +2,11 @@
 
 This contains a 3D-Printable Model based on the logo.
 
-The original haystack model was created by user mephistoschan of Thingiverse - see LICENSE.md for details.
+The [original haystack model](https://www.thingiverse.com/thing:3896602) was created by user mephistoschan of Thingiverse - see LICENSE.md for details.
 
-TODO: Image of Render
+![Image of render of printed model of haystack and tower](assets/render.png)
+
+![Image of render of printed model components](assets/render_components.png)
 
 TODO: Image of Printed Model
 

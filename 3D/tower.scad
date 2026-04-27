@@ -1,3 +1,4 @@
+// Minimum number of facets on round objects
 $fn = 50;
 
 include <constants.scad>;
@@ -95,14 +96,18 @@ module tower_legs() {
     }
 }
 
-// separate multiple pieces
-offset = 2 * rimRadius + 10;
+module tower_components() {
+    // separate multiple pieces
+    offset = 2 * rimRadius + 10;
 
-tower_upper();
+    tower_upper();
 
-translate([0, offset, 0])
-    tower_lower();
+    translate([0, offset, 0])
+        tower_lower();
 
-    
-translate([offset / 2 - 10, offset / 2, 0])
-    connecting_peg();
+        
+    translate([offset / 2 - 10, offset / 2, 0])
+        connecting_peg();
+}
+
+tower_components();
