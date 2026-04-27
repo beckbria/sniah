@@ -1,5 +1,11 @@
 $fn = 50;
 
+// KNOWN ISSUE:
+// This previews fine in OpenSCAD but fails to render (even with absurdly high convexity) with 
+// `ERROR: The given mesh is not closed! Unable to convert to CGAL_Nef_Polyhedron.`
+// This file is still included as the source of truth for hole dimensions/positions, but the STL file
+// currently included is generated with TinkerCAD.
+
 include <constants.scad>;
 
 module studHole() {
@@ -35,7 +41,7 @@ module haystack() {
         scaleFactor = 2.1;
     
         scale([scaleFactor,scaleFactor,scaleFactor])
-            import("./haystack_mephistoschan.stl", convexity=4);
+            import("./haystack_mephistoschan.stl", convexity=10);
     }
 }
 
