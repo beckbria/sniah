@@ -7,7 +7,16 @@ PILLAR_RADIUS = 2.5;
 // Radius of the studs which connect puzzle pieces into the haystack
 // Diameter 3.5mm - 9/64" Drill Bit works well
 STUD_RADIUS = 1.75;
-STUD_LENGTH = 8;
+STUD_LENGTH = 13;
+
+// The top stud is higher on the haystack and seated further back.  Its stud
+// has extra length to account for this.
+// 4.4 makes the top piece's front flush with the other pieces.  This looks ideal
+// from head on, but less good from a top-down angle.
+// 0 leaves it significantly recessed - OK from top-down but definitely noticeable in
+// a head-on view.
+// A compromise value looks good at many angles.
+TOP_STUD_EXTRA_LENGTH = 2.2;
 
 CLEARANCE_RADIUS = 0.05;    // The clearance for connections on cylinders
 

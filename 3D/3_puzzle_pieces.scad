@@ -9,7 +9,10 @@ module puzzle_piece_top(
     height = PUZZLE_PIECE_HEIGHT,
     thickness = PUZZLE_PIECE_THICKNESS,
     knob_radius = KNOB_RADIUS,
-    stud_length = STUD_LENGTH,
+    // I can't explain the magic 4.4mm addition here since the stud length
+    // *should* reference the front of the hole, which should be STUD_Y,
+    // but I can confirm that in practice this makes everything fit at the same height
+    stud_length = STUD_LENGTH + abs(TOP_STUD_Y - LEFT_STUD_Y) + TOP_STUD_EXTRA_LENGTH,
     stud_radius = STUD_RADIUS
 ) {
     puzzle_piece(
@@ -47,7 +50,7 @@ module puzzle_piece_right(
     height = PUZZLE_PIECE_HEIGHT,
     thickness = PUZZLE_PIECE_THICKNESS,
     knob_radius = KNOB_RADIUS,
-    stud_length = STUD_LENGTH,
+    stud_length = STUD_LENGTH + abs(RIGHT_STUD_Y - LEFT_STUD_Y),
     stud_radius = STUD_RADIUS
 ) {
     puzzle_piece(

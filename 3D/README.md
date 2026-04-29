@@ -6,16 +6,15 @@ The [original haystack model](https://www.thingiverse.com/thing:3896602) was cre
 
 ![Image of render of printed model of haystack and tower](assets/render.png)
 
-![Image of render of printed model components](assets/render_components.png)
-
-TODO: Image of Printed Model
+![Photograph of the printed haystack model](assets/photo.jpg)
 
 ## Printing
 
-1. The three files to print are `haystack.stl`, `tower.stl`, and `puzzle_pieces.stl`
-2. The haystack has a number of fine details.  Printing thinner layers (such as 0.1mm) will result in a noticably smoother look at the cost of more printing time.  The model looks reasonable with layers as thick as 0.3mm, however.
-3. The Tower has sufficient curves to benefit from a layer size of approximately 0.15mm, but also looks acceptable at 0.3mm.
-4. There are no specific material requirements.  Both PLA and PETG have been used without issue.
+1. The three files to print are `haystack.stl`, `tower.stl`, and `3_puzzle_pieces.stl`
+2. No supports or brim are necessary.  A brim can be harmful (difficult to cleanly detach) when printing the puzzle pieces, particularly if using PETG.
+3. Printing the haystack with layer height 0.2mm provides good results - 0.1mm is not significantly smoother.  The model looks reasonable with layers as thick as 0.3mm, however.
+4. The Tower has sufficient curves to benefit from a layer size of approximately 0.15mm, but also looks acceptable at 0.3mm.
+5. There are no specific material requirements.  Both PLA and PETG have been used without issue.
 
 ## Assembly
 
